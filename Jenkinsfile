@@ -37,7 +37,5 @@ stage('Ansible run container on ec2') {
           extras: "--extra-vars 'image=$IMAGE_NAME'"
       )
     }
-
-
 }
 
