@@ -17,6 +17,7 @@ node {
     
     stage('Run'){
         img.withRun("--name run-$BUILD_ID -p 80:8080") { c ->
+        sh 'sleep 30s'
         sh 'curl localhost'
     }
 }
