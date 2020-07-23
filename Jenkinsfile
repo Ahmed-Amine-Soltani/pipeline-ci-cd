@@ -17,6 +17,7 @@ node {
     
     stage('Run'){
         img.withRun("--name run-$BUILD_ID -p 80:8080") { c ->
+        sh 'sleep 30s'
         sh 'curl 127.0.0.1:80'
     }
 }
@@ -27,4 +28,10 @@ node {
    }
     
 }    
+    stage('Push'){
+        docker.withRegistry('https://registry.gitlab.com' ,'reg1'){
+            img.push 'latest'
+        }
 }
+}
+
