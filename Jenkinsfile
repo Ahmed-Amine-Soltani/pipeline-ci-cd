@@ -21,7 +21,7 @@ node {
         sh 'curl 127.0.0.1:80'
     }
 }
-}    
+    
     stage('Push'){
         docker.withRegistry('https://registry.gitlab.com' ,'reg1'){
             img.push 'latest'
