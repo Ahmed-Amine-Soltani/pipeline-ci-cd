@@ -28,7 +28,7 @@ node {
         }
 }
 
-stage('Ansible run container on ec2') {
+stage('Ansible pull-run target host') {
       ansiblePlaybook (
           colorized: true,
           become: true,             
