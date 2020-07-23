@@ -1,5 +1,5 @@
 node {
-    def registryProject = 'registry.gitlab.com/soltaniahmedamine/jenkins-tests/war-test'
+    def registryProject = 'registry.gitlab.com/soltaniahmedamine/jenkins-tests/pipeline-ci-cd'
     def IMAGE = "${registryProject}:wartest-${env.BUILD_ID}"
 
 
@@ -21,12 +21,6 @@ node {
         sh 'curl 127.0.0.1:80'
     }
 }
-    stage('Push'){
-    docker.withRegistry('https://registry.gitlab.com' , 'reg1'){
-        img.push 'latest'
-        img.push()
-   }
-    
 }    
     stage('Push'){
         docker.withRegistry('https://registry.gitlab.com' ,'reg1'){
