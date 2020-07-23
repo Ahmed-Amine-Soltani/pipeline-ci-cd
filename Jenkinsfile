@@ -24,5 +24,7 @@ node {
     docker.withRegistry('https://registry.gitlab.com' , 'reg1'){
         img.push 'latest'
         img.push()
-    }
+   }
+    
 }    
+}
