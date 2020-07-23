@@ -1,5 +1,5 @@
 node {
-    def registryProject = 'registry.gitlab.com/soltaniahmedamine/jenkins-tests/war-test'
+    def registryProject = 'registry.gitlab.com/soltaniahmedamine/jenkins-tests/pipeline-ci-cd'
     def IMAGE = "${registryProject}:wartest-${env.BUILD_ID}"
 
 
@@ -17,7 +17,7 @@ node {
     
     stage('Run'){
         img.withRun("--name run-$BUILD_ID -p 80:8080") { c ->
-        sh 'curl 127.0.0.1:80'
+        sh 'curl localhost'
     }
 }
     
